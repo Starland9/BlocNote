@@ -1,5 +1,7 @@
-from PyQt6.QtWidgets import QMainWindow, QMessageBox, QFileDialog
+from PyQt6.QtGui import QFont, QColor
+from PyQt6.QtWidgets import QMainWindow, QMessageBox, QFileDialog, QFontDialog, QColorDialog
 
+from src.config import Config
 from ui import main_window
 
 
@@ -11,6 +13,9 @@ class BlocNoteWindow(QMainWindow, main_window.Ui_MainWindow):
         self.current_file = None
         self.old_content = None
         self.current_content = None
+        self.current_font = QFont()
+        self.background_color = QColor()
+        self.foreground_color = QColor()
 
         self.connect_all_actions()
 
@@ -28,8 +33,15 @@ class BlocNoteWindow(QMainWindow, main_window.Ui_MainWindow):
         self.actionCouper.triggered.connect(self.textEdit.cut)
         self.actionSelectionner_tout.triggered.connect(self.textEdit.selectAll)
 
+        self.actionPolice_de_caractere.triggered.connect(self.choose_font_size)
+        self.actionCouleur_de_fond.triggered.connect(self.choose_background_color)
+        self.actionCouleur_du_texte.triggered.connect(self.choose_foreground_color)
+        self.actionLecture_seule.triggered.connect(self.toggle_readonly)
+
         self.actionA_Propos.triggered.connect(self.show_about)
         self.actionA_Propos_de_Qt.triggered.connect(self.show_qt_about)
+
+        self.destroyed.connect(self.exit)
 
     def connect_content_action(self):
         self.textEdit.textChanged.connect(self.on_text_edit_changed)
@@ -75,6 +87,10 @@ class BlocNoteWindow(QMainWindow, main_window.Ui_MainWindow):
             self.show_save_demand()
         self.close()
 
+    def close(self) -> bool:
+        Config(self).store_config()
+        return True
+
     def on_text_edit_changed(self):
         self.current_content = self.textEdit.toPlainText()
         self.update_title()
@@ -112,3 +128,25 @@ class BlocNoteWindow(QMainWindow, main_window.Ui_MainWindow):
 
     def show_qt_about(self):
         QMessageBox.aboutQt(self, "A propos de Qt")
+
+    def choose_font_size(self):
+        self.current_font, selected = QFontDialog.getFont(self.current_font, self, "Choisir la police de caractere")
+        if selected:
+            self.textEdit.setFont(self.current_font)
+
+    def choose_background_color(self):
+        self.background_color = QColorDialog.getColor(
+            self.background_color, self, "Choisir la couleur de fond"
+        )
+        if self.background_color:
+            self.textEdit.setTextBackgroundColor(self.background_color)
+
+    def choose_foreground_color(self):
+        self.foreground_color = QColorDialog.getColor(
+            self.background_color, self, "Choisir la couleur du texte"
+        )
+        if self.foreground_color:
+            self.textEdit.setTextColor(self.foreground_color)
+
+    def toggle_readonly(self):
+        self.textEdit.setReadOnly(self.actionLecture_seule.isChecked())

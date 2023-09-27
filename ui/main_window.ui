@@ -62,14 +62,26 @@
     <addaction name="separator"/>
     <addaction name="actionA_Propos_de_Qt"/>
    </widget>
+   <widget class="QMenu" name="menu_Parametres">
+    <property name="title">
+     <string>&amp;Parametres</string>
+    </property>
+    <addaction name="actionPolice_de_caractere"/>
+    <addaction name="actionCouleur_de_fond"/>
+    <addaction name="actionCouleur_du_texte"/>
+    <addaction name="separator"/>
+    <addaction name="actionLecture_seule"/>
+   </widget>
    <addaction name="menu_Fichier"/>
    <addaction name="menu_Edition"/>
+   <addaction name="menu_Parametres"/>
    <addaction name="menuAide"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNouveau">
    <property name="icon">
-    <iconset theme="document-new"/>
+    <iconset theme="document-new">
+     <normaloff>../../../.designer/backup</normaloff>../../../.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Nouveau</string>
@@ -80,7 +92,8 @@
   </action>
   <action name="actionOuvrir">
    <property name="icon">
-    <iconset theme="document-open"/>
+    <iconset theme="document-open">
+     <normaloff>../../../.designer/backup</normaloff>../../../.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Ouvrir</string>
@@ -91,7 +104,8 @@
   </action>
   <action name="actionEnregistrer">
    <property name="icon">
-    <iconset theme="document-save"/>
+    <iconset theme="document-save">
+     <normaloff>../../../.designer/backup</normaloff>../../../.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Enregistrer</string>
@@ -102,7 +116,8 @@
   </action>
   <action name="actionEnregistrer_sous">
    <property name="icon">
-    <iconset theme="document-save-as"/>
+    <iconset theme="document-save-as">
+     <normaloff>../../../.designer/backup</normaloff>../../../.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Enregistrer sous</string>
@@ -113,7 +128,8 @@
   </action>
   <action name="actionQuitter">
    <property name="icon">
-    <iconset theme="document-close"/>
+    <iconset theme="document-close">
+     <normaloff>../../../.designer/backup</normaloff>../../../.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Quitter</string>
@@ -178,6 +194,29 @@
   <action name="actionA_Propos_de_Qt">
    <property name="text">
     <string>A Propos de Qt</string>
+   </property>
+  </action>
+  <action name="actionPolice_de_caractere">
+   <property name="text">
+    <string>Police de caractere</string>
+   </property>
+  </action>
+  <action name="actionCouleur_de_fond">
+   <property name="text">
+    <string>Couleur de fond</string>
+   </property>
+  </action>
+  <action name="actionCouleur_du_texte">
+   <property name="text">
+    <string>Couleur du texte</string>
+   </property>
+  </action>
+  <action name="actionLecture_seule">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Lecture seule</string>
    </property>
   </action>
  </widget>
