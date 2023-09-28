@@ -55,6 +55,9 @@
     <addaction name="actionSelectionner_tout"/>
    </widget>
    <widget class="QMenu" name="menuAide">
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>&amp;Aide</string>
     </property>
@@ -81,7 +84,7 @@
   <action name="actionNouveau">
    <property name="icon">
     <iconset theme="document-new">
-     <normaloff>../../../.designer/backup</normaloff>../../../.designer/backup</iconset>
+     <normaloff>../../../../.designer/backup</normaloff>../../../../.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Nouveau</string>
@@ -93,7 +96,7 @@
   <action name="actionOuvrir">
    <property name="icon">
     <iconset theme="document-open">
-     <normaloff>../../../.designer/backup</normaloff>../../../.designer/backup</iconset>
+     <normaloff>../../../../.designer/backup</normaloff>../../../../.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Ouvrir</string>
@@ -105,7 +108,7 @@
   <action name="actionEnregistrer">
    <property name="icon">
     <iconset theme="document-save">
-     <normaloff>../../../.designer/backup</normaloff>../../../.designer/backup</iconset>
+     <normaloff>../../../../.designer/backup</normaloff>../../../../.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Enregistrer</string>
@@ -117,7 +120,7 @@
   <action name="actionEnregistrer_sous">
    <property name="icon">
     <iconset theme="document-save-as">
-     <normaloff>../../../.designer/backup</normaloff>../../../.designer/backup</iconset>
+     <normaloff>../../../../.designer/backup</normaloff>../../../../.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Enregistrer sous</string>
@@ -129,7 +132,7 @@
   <action name="actionQuitter">
    <property name="icon">
     <iconset theme="document-close">
-     <normaloff>../../../.designer/backup</normaloff>../../../.designer/backup</iconset>
+     <normaloff>../../../../.designer/backup</normaloff>../../../../.designer/backup</iconset>
    </property>
    <property name="text">
     <string>Quitter</string>
@@ -139,6 +142,9 @@
    </property>
   </action>
   <action name="actionRetour">
+   <property name="icon">
+    <iconset theme="edit-undo"/>
+   </property>
    <property name="text">
     <string>Retour</string>
    </property>
@@ -147,6 +153,9 @@
    </property>
   </action>
   <action name="actionAvancer">
+   <property name="icon">
+    <iconset theme="edit-redo"/>
+   </property>
    <property name="text">
     <string>Avancer</string>
    </property>
@@ -155,6 +164,9 @@
    </property>
   </action>
   <action name="actionCopier">
+   <property name="icon">
+    <iconset theme="edit-copy"/>
+   </property>
    <property name="text">
     <string>Copier</string>
    </property>
@@ -163,6 +175,9 @@
    </property>
   </action>
   <action name="actionCouper">
+   <property name="icon">
+    <iconset theme="edit-cut"/>
+   </property>
    <property name="text">
     <string>Couper</string>
    </property>
@@ -171,6 +186,9 @@
    </property>
   </action>
   <action name="actionColler">
+   <property name="icon">
+    <iconset theme="edit-paste"/>
+   </property>
    <property name="text">
     <string>Coller</string>
    </property>
@@ -179,6 +197,9 @@
    </property>
   </action>
   <action name="actionSelectionner_tout">
+   <property name="icon">
+    <iconset theme="edit-select-all"/>
+   </property>
    <property name="text">
     <string>Selectionner tout</string>
    </property>
@@ -187,6 +208,9 @@
    </property>
   </action>
   <action name="actionA_Propos">
+   <property name="icon">
+    <iconset theme="help-about"/>
+   </property>
    <property name="text">
     <string>A Propos</string>
    </property>
@@ -197,11 +221,17 @@
    </property>
   </action>
   <action name="actionPolice_de_caractere">
+   <property name="icon">
+    <iconset theme="font"/>
+   </property>
    <property name="text">
     <string>Police de caractere</string>
    </property>
   </action>
   <action name="actionCouleur_de_fond">
+   <property name="icon">
+    <iconset theme="color"/>
+   </property>
    <property name="text">
     <string>Couleur de fond</string>
    </property>
