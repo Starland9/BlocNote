@@ -2,3 +2,8 @@
 /venv/
 /dist/
 /build/
+
+*.pyc
+config.json
+
+*__pycache__
